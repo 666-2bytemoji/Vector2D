@@ -4,40 +4,40 @@
 class Vector2D
 {
 public:
-	Vector2D() : _x(0), _y(0){};
-	Vector2D(double elemX, double elemY);
-	Vector2D(double startX, double startY, double endX, double endY);
-	Vector2D(const Vector2D &start, const Vector2D &end);
-	~Vector2D();
+    Vector2D() : _x(0), _y(0){};
+    Vector2D(double elemX, double elemY);
+    Vector2D(double startX, double startY, double endX, double endY);
+    Vector2D(const Vector2D &start, const Vector2D &end);
+    ~Vector2D();
 
     inline void Set(const Vector2D &start, const Vector2D &end);
     inline void Set(double startX, double startY, double endX, double endY);
     inline void Set(double elemX, double elemY);
 
-	const Vector2D operator+(const Vector2D &vec);
-	const Vector2D operator+=(const Vector2D &vec);
-	const Vector2D operator-(const Vector2D &vec);
-	const Vector2D operator-=(const Vector2D &vec);
-	const Vector2D operator*(const Vector2D &vec);
-	const Vector2D operator*=(const Vector2D &vec);
-	const Vector2D operator*(const double scale);
-	const Vector2D operator*=(const double scale);
+    const Vector2D operator+(const Vector2D &vec);
+    const Vector2D operator+=(const Vector2D &vec);
+    const Vector2D operator-(const Vector2D &vec);
+    const Vector2D operator-=(const Vector2D &vec);
+    const Vector2D operator*(const Vector2D &vec);
+    const Vector2D operator*=(const Vector2D &vec);
+    const Vector2D operator*(const double scale);
+    const Vector2D operator*=(const double scale);
 
-	//ベクトルの長さを返す
-	inline double GetLength() const;
-	//ベクトル長の2乗を返す
+    //ベクトルの長さを返す
+    inline double GetLength() const;
+    //ベクトル長の2乗を返す
     inline double GetSqLength() const;
 
-	//ベクトルを正規化したものを返す
+    //ベクトルを正規化したものを返す
     inline Vector2D GetNormalized();
-	//ベクトルを指定の角度(度数指定)回転させたものを返す
+    //ベクトルを指定の角度(度数指定)回転させたものを返す
     inline Vector2D GetRotated(double theta);
 
-	//ベクトルを正規化する
+    //ベクトルを正規化する
     inline void Normalize();
-	//ベクトルを視点を基点に,Z軸方向に指定の角度(度数指定)だけ回転させる
+    //ベクトルを視点を基点に,Z軸方向に指定の角度(度数指定)だけ回転させる
     inline void Rotate(double theta);
-	//xとyを入れ替える
+    //xとyを入れ替える
     inline void Swap();
 
     //内積値を算出
@@ -51,15 +51,15 @@ public:
     inline static Vector2D Cross(const Vector2D &vec, bool useRightHandSystem);
 
     //原点
-	static const Vector2D zero;
+    static const Vector2D zero;
 
-	//カメラのUpベクトル基準で見たそれぞれの方向ベクトル
-	static const Vector2D up;
-	static const Vector2D left;
-	static const Vector2D right;
-	static const Vector2D down;
+    //カメラのUpベクトル基準で見たそれぞれの方向ベクトル
+    static const Vector2D up;
+    static const Vector2D left;
+    static const Vector2D right;
+    static const Vector2D down;
 
-	double _x, _y;
+    double _x, _y;
 };
 
 #include "Vector2D_InlineDef.h"
